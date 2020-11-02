@@ -1,13 +1,14 @@
-class Words
+class Anagram
 
-  attr_accessor :words
+  attr_accessor :word
 
-  def initialize(words)
-# split into an array ("")
-  @words = %w(words)
-
-
+  def initialize(word)
+    @word = word
   end
 
-
-end# Your code goes here!
+  def match(word_array)
+    word_array.select do |word|
+      word.split("").sort == @word.split("").sort
+    end
+  end
+end
